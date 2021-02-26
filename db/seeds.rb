@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#I find this seed file to put out very funny body's for the animals
+#it feels like they are fighting characters in a game lol
+Animal.destroy_all
+10.times do
+    y = (Faker::Verb.ing_form.capitalize)
+    x = (Faker::Games::Minecraft.status_effect)
+   a = Animal.create(name: Faker::Creature::Animal.name.capitalize, body: "#{y} #{x}" )
+   a
+end
+
+puts "seeded #{Animal.all}"
+
