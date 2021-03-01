@@ -7,7 +7,8 @@ class AnimalsController < ApplicationController
     end
     def show
         @animal = Animal.find(params[:id])
+        @hobbies = @animal.hobbies.all
 
-        render component: "Animal", props: {animal: @animal}
+        render component: "Animal", props: {animal: @animal, hobbies: @hobbies}
     end
 end
